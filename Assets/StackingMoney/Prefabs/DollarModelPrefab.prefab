@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4844643474404245833}
   - component: {fileID: 4844643474404245829}
   m_Layer: 0
-  m_Name: Dollar (1)
+  m_Name: DollarModelPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687e45dd1b1afa1479f8bc4cdbcdfbe3, type: 3}
   m_Name: Player_Camera_Settings
   m_EditorClassIdentifier: 
-  zOffset: 12
-  lerpSpeed: 2
+  zOffset: 3
+  lerpSpeed: 5
