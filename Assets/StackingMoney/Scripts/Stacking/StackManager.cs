@@ -10,7 +10,8 @@ namespace StackingMoney.Stacking
     public class StackManager : MonoBehaviour
     {
         public static StackManager stackManager;
-        [SerializeField] GameObject moneyPrefab;
+        [SerializeField] private GameObject moneyPrefab;
+        [SerializeField] private NodeStats nodeStat;
 
         private List<GameObject> nodeList = new List<GameObject>();
 
@@ -35,6 +36,7 @@ namespace StackingMoney.Stacking
         public void AddMoneyGameobject(GameObject money)
         {
             money.AddComponent<Node>().connectedNode = nodeList.Last().transform;
+            money.GetComponent<Node>().nodeStats = nodeStat;
             nodeList.Add(money.gameObject);
         }
 

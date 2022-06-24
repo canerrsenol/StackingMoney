@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace StackingMoney.Stacking
 {
     public class Node : MonoBehaviour
     {
+        public NodeStats nodeStats;
         public Transform connectedNode;
-        public float lerpSpeed = 5f;
-
-        public float LerpSpeed { get { return lerpSpeed; } }
 
         private void Start()
         {
-            transform.position = connectedNode.position + Vector3.forward / 5;
+            transform.position = connectedNode.position + Vector3.forward / 3;
         }
 
         void Update()
         {
-            float lerpedValue = Mathf.Lerp(transform.position.x, connectedNode.position.x, lerpSpeed * Time.deltaTime);
-            transform.position = new Vector3(lerpedValue, transform.position.y, connectedNode.position.z + 0.3f);
+            float lerpedValue = Mathf.Lerp(transform.position.x, connectedNode.position.x, nodeStats.LerpSpeed * Time.deltaTime);
+            transform.position = new Vector3(lerpedValue, transform.position.y, connectedNode.position.z + nodeStats.ZOffsetConnectedNode);
         }
 
         private void OnTriggerEnter(Collider other)
